@@ -1,0 +1,26 @@
+# Daftar ProxyIP publik (dipakai/direkomendasikan proyek cmliu/edgetunnel)
+# Format: host[:port]  (port default 443)
+# Verifikasi live via DoH Google, terakhir dicek 2026-09-28.
+#
+# --- Domain utama (live, terverifikasi) ---
+proxyip.cmliussss.net:443        # domain utama cmliu (A: 172.64.144.82, 104.18.43.174)
+ProxyIP.CMLiussss.Net:443
+XIP.tp1.090227.xyz:443           # fallback edgetunnel bawaan (CNAME -> proxyip.cmliussss.net)
+ProxyIP.US.CMLiussss.Net:443        # regional US
+ProxyIP.SG.CMLiussss.Net:443        # regional SG
+ProxyIP.JP.CMLiussss.Net:443        # regional JP
+ProxyIP.HK.CMLiussss.Net:443        # regional HK
+ProxyIP.KR.CMLiussss.Net:443        # regional KR
+ProxyIP.DE.CMLiussss.Net:443        # regional DE
+
+# --- IP contoh hasil resolve regional (bisa berubah, cek ulang) ---
+# US: 47.254.122.134, 66.154.117.245, 192.204.62.245, 38.46.216.38
+# SG: 159.89.199.63, 188.239.9.91, 165.22.110.8, 159.65.1.74
+# JP: 64.176.54.102, 8.219.195.31, 141.147.162.33, 137.220.225.111
+#
+# Pemakaian di wrangler.toml:
+#   PROXYIP = "proxyip.cmliussss.net:443"
+#   atau beberapa sekaligus (worker kita pilih statis; edgetunnel random):
+#   PROXYIP = "ProxyIP.SG.CMLiussss.Net:443"
+#
+# Cek keaktifan: https://check.proxyip.cmliussss.net/
